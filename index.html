@@ -6,8 +6,27 @@
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
+      
+      if(profile.active === true && !reason){
 
+        return "confirm status manually";
+
+      }else if(profile.active === true){
+       
+        profile.active = false;
+        profile.reason = reason;
+      
+      }else if(profile.active === false){
+
+        profile.active = true;
+        delete profile.reason;
+
+      }
+
+    
+      return profile;
     }
+
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {

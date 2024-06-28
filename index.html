@@ -27,10 +27,28 @@
       return profile;
     }
 
-
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
 
+
+      if(x < 1 || x > 3 || y < 1 || y > 3){
+
+        return "invalid coordinates";
+    
+      }else {
+
+        if(grid[y-1][x-1] === "🟥"){
+
+          return "🟥 💀";
+        
+        }else{
+          
+          return "🟦 🥳";
+
+        }
+      
+      }
+      
     }
 
     // 👉 CHALLENGE 3

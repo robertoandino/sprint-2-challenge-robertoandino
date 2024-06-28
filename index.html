@@ -54,6 +54,31 @@
     // 👉 CHALLENGE 3
     function booleanize(obj) {
 
+      for(let key in obj){
+        
+        if(key.length > 9){
+
+          return "shorten all prop names to 9 chars or less"    
+
+        }
+        
+        if(obj[key] === 0){
+          
+          obj[key] = false;
+
+        }else if(obj[key] === 1){
+
+          obj[key] = true;
+
+        }else if(obj[key] === null){
+
+          delete obj[key];
+
+        }
+      }
+
+      return obj;
+
     }
 
     // 👉 CHALLENGE 4

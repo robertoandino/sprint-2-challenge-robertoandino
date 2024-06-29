@@ -83,11 +83,68 @@
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
+      
 
+      if(text === null){
+
+        return text;
+
+      }
+
+      let words = text.split(' ');
+      let words2 = [];
+
+      for(let i = 0; i < words.length; i++){
+
+        let str = words[i];
+
+        if(forbidden.includes(str)){
+
+          let str2 = '';
+
+          for(let x = 0; x < str.length; x++){
+
+            str2 += 'x';
+
+          }
+
+          words2.push(str2);
+
+        
+        }else{
+          words2.push(str);
+        }
+      
+
+      }
+
+      return words2.join(' ');
     }
 
     // 👉 CHALLENGE 5 (bonus, NOT graded)
     function normalizePhoneNumber(num) {
+
+      let numbers = num.split('');
+      let numbers2 = ['('];
+
+      for(let i = 0; i < numbers.length; i++){
+
+        if(i === 3){
+
+          numbers2.push(') ');
+        
+
+        }else if(i === 6){
+
+          numbers2.push('-');
+
+        }
+
+        numbers2.push(numbers[i]);
+
+      }
+      
+      return numbers2.join('');
 
     }
 
